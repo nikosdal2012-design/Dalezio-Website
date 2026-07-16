@@ -1366,7 +1366,7 @@
     }
 
     /* Ο Τοίχος: κοινόχρηστο wall, χωρίς login, ορατό σε όλους. */
-    const WALL_API = "https://api.npoint.io/b1793f1d00fb7d045d95";
+    const WALL_API = "https://jsonblob.com/api/jsonBlob/019f6b63-2a11-73be-94fb-d4c208e84b84";
 
     const wallForm = document.getElementById("wall-form");
     const wallNameInput = document.getElementById("wall-name");
@@ -1486,7 +1486,7 @@
         const newPost = { name, text: text.slice(0, 500), time: Date.now() };
         const updated = [...(Array.isArray(freshData) ? freshData : []), newPost];
         const res = await fetch(WALL_API, {
-          method: "POST",
+          method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(updated)
         });
